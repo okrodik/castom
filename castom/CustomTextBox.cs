@@ -17,11 +17,10 @@ namespace castom
         public Image Icon
         {
             get { return pictureBox.Image; }
-            set
-            {
+            set {
                 pictureBox.Image = value;
                 this.Invalidate();
-            }
+                }
         }
 
        public CustomTextBox()
@@ -36,14 +35,13 @@ namespace castom
             textBox.Width = this.Width - (iconWidth + 10);
             textBox.Height = this.Height;
 
-            pictureBox.Size = new Size (iconWidth, this.Height);
+            pictureBox.Size = new Size(iconWidth, this.Height);
             pictureBox.SizeMode =  PictureBoxSizeMode.StretchImage;
 
             this.Resize += CustomTextBox_Resize;
             textBox.TextChanged += OnTextChanged;
             pictureBox.Click += new EventHandler(pictureBox_Click);
         }
-
 
 
         private void OnTextChanged(object sender, EventArgs e)

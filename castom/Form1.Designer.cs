@@ -35,7 +35,7 @@
             // customTextBox1
             // 
             this.customTextBox1.Icon = null;
-            this.customTextBox1.Location = new System.Drawing.Point(320, 40);
+            this.customTextBox1.Location = new System.Drawing.Point(422, 69);
             this.customTextBox1.Name = "customTextBox1";
             this.customTextBox1.Size = new System.Drawing.Size(140, 146);
             this.customTextBox1.TabIndex = 1;
@@ -45,7 +45,7 @@
             this.customButton1.BTNColor = System.Drawing.Color.LightBlue;
             this.customButton1.Location = new System.Drawing.Point(143, 40);
             this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(127, 78);
+            this.customButton1.Size = new System.Drawing.Size(171, 159);
             this.customButton1.TabIndex = 0;
             this.customButton1.Text = "customButton1";
             // 

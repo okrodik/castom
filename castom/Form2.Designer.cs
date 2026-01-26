@@ -28,13 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.cartochka1 = new castom.Cartochka();
             this.SuspendLayout();
+            // 
+            // cartochka1
+            // 
+            this.cartochka1.Location = new System.Drawing.Point(198, 122);
+            this.cartochka1.Name = "cartochka1";
+            this.cartochka1.Size = new System.Drawing.Size(75, 23);
+            this.cartochka1.TabIndex = 0;
+            this.cartochka1.Text = "cartochka1";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cartochka1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -42,5 +52,7 @@
         }
 
         #endregion
+
+        private Cartochka cartochka1;
     }
 }
