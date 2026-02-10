@@ -34,6 +34,7 @@ namespace castom
                 BackColor = Color.Red,
                 Width = 300,
                 Height = 400,
+                SizeMode = PictureBoxSizeMode.StretchImage
             };
 
             panel = new Panel
@@ -52,7 +53,7 @@ namespace castom
 
             button = new Button
             {
-                Text = "Действие",
+                Text = "Кнопочка",
                 Anchor = AnchorStyles.Bottom | AnchorStyles.Right,
                 Location = new Point(panel.Width - 100, panel.Height - 30),
                 Width = 100,
@@ -61,45 +62,52 @@ namespace castom
 
             button.Click += OnButtonClick;
 
-            // Добавляем элементы в панель
             AddControlsToPanel();
 
-            // Добавляем компоненты на форму
             this.Controls.Add(pictureBox);
             Controls.Add(panel);
         }
 
         private Label[] CreateLabelsArray()
         {
-            return Enumerable.Range(1, 4)
-                            .Select(i => new Label
-                            {
-                                Name = $"label{i}",
-                                AutoSize = true,
-                            })
-                            .ToArray();
+            Label[] labels = new Label[4];
+            for (int i = 0; i < labels.Length; i++)
+            {
+                labels[i] = new Label
+                {
+                    Name = $"label{i + 1}",
+                    AutoSize = true
+                };
+            }
+            return labels;
         }
 
         private Label[] CreateLabels2Array()
         {
-            return Enumerable.Range(1, 10)
-                            .Select(i => new Label
-                            {
-                                Name = $"label{i}",
-                                AutoSize = true,
-                            })
-                            .ToArray();
+            Label[] labels = new Label[10];
+            for (int i = 0; i < labels.Length; i++)
+            {
+                labels[i] = new Label
+                {
+                    Name = $"label{i + 1}", 
+                    AutoSize = true
+                };
+            }
+            return labels;
         }
 
         private CheckBox[] CreateCheckboxesArray()
         {
-            return Enumerable.Range(1, 10)
-                            .Select(i => new CheckBox
-                            {
-                                Name = $"checkBox{i}",
-                                AutoSize = true,
-                            })
-                            .ToArray();
+            CheckBox[] checkboxes = new CheckBox[10];
+            for (int i = 0; i < checkboxes.Length; i++)
+            {
+                checkboxes[i] = new CheckBox
+                {
+                    Name = $"checkBox{i + 1}",
+                    AutoSize = true
+                };
+            }
+            return checkboxes;
         }
 
         private void AddControlsToPanel()
@@ -161,98 +169,98 @@ namespace castom
         }
 
         [Category("Custom Properties"), Description("Заголовок первой метки")]
-        public string TitleText
+        public string FIO
         {
             get => labels[0]?.Text;
             set => SetLabelText(0, value);
         }
 
         [Category("Custom Properties"), Description("Текст второй метки")]
-        public string SubTitleText
+        public string Date
         {
             get => labels[1]?.Text;
             set => SetLabelText(1, value);
         }
 
         [Category("Custom Properties"), Description("Текст третьей метки")]
-        public string Label3Text
+        public string Pol
         {
             get => labels[2]?.Text;
             set => SetLabelText(2, value);
         }
 
         [Category("Custom Properties"), Description("Текст четвертой метки")]
-        public string Label4Text
+        public string Work
         {
             get => labels[3]?.Text;
             set => SetLabelText(3, value);
         }
 
         [Category("Custom Properties"), Description("Текст пятой метки")]
-        public string Label5Text
+        public string Quetion1
         {
             get => labels2[0]?.Text;
             set => SetLabelText(0, value);
         }
 
         [Category("Custom Properties"), Description("Текст шестой метки")]
-        public string Label6Text
+        public string Quetion2
         {
             get => labels2[1]?.Text;
             set => SetLabelText2(1, value);
         }
 
         [Category("Custom Properties"), Description("Текст седьмой метки")]
-        public string Label7Text
+        public string Quetion3
         {
             get => labels2[2]?.Text;
             set => SetLabelText2(2, value);
         }
 
         [Category("Custom Properties"), Description("Текст восьмой метки")]
-        public string Label8Text
+        public string Quetion4
         {
             get => labels2[3]?.Text;
             set => SetLabelText2(3, value);
         }
 
         [Category("Custom Properties"), Description("Текст девятой метки")]
-        public string Label9Text
+        public string Quetion5
         {
             get => labels2[4]?.Text;
             set => SetLabelText2(4, value);
         }
 
         [Category("Custom Properties"), Description("Текст десятой метки")]
-        public string Label10Text
+        public string Quetion6
         {
             get => labels2[5]?.Text;
             set => SetLabelText2(5, value);
         }
 
         [Category("Custom Properties"), Description("Текст одиннадцатой метки")]
-        public string Label11Text
+        public string Quetion7
         {
             get => labels2[6]?.Text;
             set => SetLabelText2(6, value);
         }
 
         [Category("Custom Properties"), Description("Текст двенадцатой метки")]
-        public string Label12Text
+        public string Quetion8
         {
             get => labels2[7]?.Text;
             set => SetLabelText2(7, value);
         }
 
         [Category("Custom Properties"), Description("Текст тринадцатой метки")]
-        public string Label13Text
+        public string Quetion9
         {
             get => labels2[8]?.Text;
             set => SetLabelText2(8, value);
         }
 
         [Category("Custom Properties"), Description("Текст четырнадцатой метки")]
-        public string Label14Text
+        public string Quetion10
         {
             get => labels2[9]?.Text;
             set => SetLabelText2(9, value);
@@ -335,21 +343,7 @@ namespace castom
             get => base.BackColor;
             set
             {
-                base.BackColor = value;
                 panel.BackColor = value;
-            }
-        }
-
-        [Category("Внешний вид"), Description("Размер шрифта всех надписей")]
-        public float LabelsFontSize
-        {
-            get => labels.FirstOrDefault()?.Font.Size ?? 10f;
-            set
-            {
-                foreach (var label in labels)
-                {
-                    label.Font = new Font(label.Font.FontFamily, value);
-                }
             }
         }
 
@@ -372,7 +366,27 @@ namespace castom
 
         protected virtual void OnButtonClick(object sender, EventArgs e)
         {
-            MessageBox.Show("Вы нажали кнопку!", "Карточка");
+            string message = InforGet();
+            MessageBox.Show(message, "Данные");
+        }
+
+        private string InforGet()
+        {
+            string result = $"{FIO}\n{Date}\n{Pol}\n{Work}";
+
+            for (int i = 0; i < checkBoxes.Length; i++)
+            {
+                if (checkBoxes[i].Checked)
+                {
+                    result += $"\n{i + 1}: ✔ ({labels2[i].Text})";
+                }
+                else
+                {
+                    result += $"\n{i + 1}: ❌ ({labels2[i].Text})";
+                }
+            }
+
+            return result;
         }
     }
 }
