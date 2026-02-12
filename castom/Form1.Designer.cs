@@ -33,13 +33,11 @@
             // 
             // calculator1
             // 
-            
-            this.calculator1.Location = new System.Drawing.Point(39, 13);
+            this.calculator1.Location = new System.Drawing.Point(60, 28);
             this.calculator1.Name = "calculator1";
-           
-            this.calculator1.Size = new System.Drawing.Size(726, 425);
+            this.calculator1.Size = new System.Drawing.Size(652, 330);
             this.calculator1.TabIndex = 0;
-  
+            this.calculator1.Text = "calculator1";
             // 
             // Form1
             // 
