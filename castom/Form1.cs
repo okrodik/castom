@@ -1,5 +1,4 @@
-﻿using castom.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +15,7 @@ namespace castom
         public Form1()
         {
             InitializeComponent();
+
         }
     }
 }

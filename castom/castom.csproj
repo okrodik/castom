@@ -52,14 +52,14 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cartochka.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Calculator.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Calculator.Designer.cs">
       <DependentUpon>Calculator.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cartochka.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

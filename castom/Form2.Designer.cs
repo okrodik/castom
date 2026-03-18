@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.cartochka1 = new castom.Cartochka();
+            this.calculator1 = new castom.Calculator();
             this.SuspendLayout();
             // 
             // cartochka1
@@ -45,7 +46,7 @@
             this.cartochka1.Checkbox9State = false;
             this.cartochka1.Date = "PAPAPA";
             this.cartochka1.FIO = "PAPAPA";
-            this.cartochka1.Location = new System.Drawing.Point(-29, 12);
+            this.cartochka1.Location = new System.Drawing.Point(13, 52);
             this.cartochka1.Name = "cartochka1";
             this.cartochka1.Pol = "PAPAPA";
             this.cartochka1.Quetion1 = "Привет";
@@ -58,16 +59,25 @@
             this.cartochka1.Quetion7 = "Привет";
             this.cartochka1.Quetion8 = "Привет";
             this.cartochka1.Quetion9 = "Привет";
-            this.cartochka1.Size = new System.Drawing.Size(651, 332);
+            this.cartochka1.Size = new System.Drawing.Size(728, 386);
             this.cartochka1.TabIndex = 0;
             this.cartochka1.Text = "cartochka1";
             this.cartochka1.Work = "PAPAPA";
+            // 
+            // calculator1
+            // 
+            this.calculator1.Location = new System.Drawing.Point(786, 67);
+            this.calculator1.Name = "calculator1";
+            this.calculator1.Size = new System.Drawing.Size(400, 371);
+            this.calculator1.TabIndex = 1;
+            this.calculator1.Text = "calculator1";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1318, 544);
+            this.Controls.Add(this.calculator1);
             this.Controls.Add(this.cartochka1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -78,5 +88,6 @@
         #endregion
 
         private Cartochka cartochka1;
+        private Calculator calculator1;
     }
 }
